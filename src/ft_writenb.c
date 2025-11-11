@@ -6,17 +6,19 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:18:32 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/11 16:34:49 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/11 23:28:41 by sservant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static size_t	ft_numlen(size_t n)
+static size_t	ft_numlen(unsigned int n)
 {
 	int	i;
 
 	i = 0;
+	if (n == 0)
+		return (1);
 	while (n != 0)
 	{
 		n = n / 10;
@@ -40,18 +42,30 @@ void	ft_putnbr_sizet(unsigned int nb)
 		ft_putchar_fd((nbr + '0'), 1);
 }
 
-size_t	ft_writenb(int nb)
+static size_t	ft_intlen(int n)
 {
-	int	isnegative;
+	int	i;
 
-	isnegative = 0;
-	if ((int) nb <= 0)
-		isnegative = 1;
-	ft_putnbr_fd(nb, 1);
-	return (ft_numlen(nb) + isnegative);
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		i = 1;
+	while (n != 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
 }
 
-size_t	ft_writeunb(size_t nb)
+size_t	ft_writenb(int nb)
+{
+	ft_putnbr_fd(nb, 1);
+	return (ft_intlen(nb));
+}
+
+size_t	ft_writeunb(unsigned int nb)
 {
 	ft_putnbr_sizet(nb);
 	return (ft_numlen(nb));

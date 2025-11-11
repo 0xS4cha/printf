@@ -6,13 +6,13 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:14:19 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/11 15:16:41 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/11 23:29:12 by sservant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-size_t	ft_writenull()
+size_t	ft_writenull(void)
 {
 	ft_putstr_fd("(null)", 1);
 	return (6);
