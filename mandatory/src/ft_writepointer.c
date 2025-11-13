@@ -6,7 +6,7 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:06:33 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/11 23:30:08 by sservant         ###   ########.fr       */
+/*   Updated: 2025/11/12 09:21:07 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,3 @@ size_t	ft_writepointer(void *ptr, int in_lowercase)
 	ft_putstr_fd("0x", 1);
 	return (ft_displaypointer(nb, in_lowercase) + 2);
 }
-
-

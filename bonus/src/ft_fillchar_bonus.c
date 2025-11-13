@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_writenull.c                                     :+:      :+:    :+:   */
+/*   ft_writewidth_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 15:14:19 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/11 23:29:12 by sservant         ###   ########.fr       */
+/*   Created: 2025/11/12 13:16:41 by sservant          #+#    #+#             */
+/*   Updated: 2025/11/12 14:15:11 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "../ft_printf_bonus.h"
 
-size_t	ft_writenull(void)
+size_t	ft_fillchar(char c, int	count)
 {
-	ft_putstr_fd("(null)", 1);
-	return (6);
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		ft_putchar_fd(c, 1);
+		i++;
+	}
+	return (count);
 }
