@@ -1,14 +1,15 @@
-LIBFT = ./libft/libft.a
-NAME				= libftprintf.a
-CFLAGS				= -Wall -Werror -Wextra -I. -MMD -MP
-C_MANDATORY_FILES	= ft_printf.c \
-					src/ft_writechar.c \
-					src/ft_writenb.c \
-					src/ft_writestr.c \
-					src/ft_writepointer.c \
-					src/ft_writenil.c \
-					src/ft_writenull.c \
-					src/ft_writehex.c
+LIBFT_PATH				= libft
+LIBFT					= $(LIBFT_PATH)/libft.a
+NAME					= libftprintf.a
+CFLAGS					= -Wall -Werror -Wextra -I. -MMD -MP
+C_MANDATORY_FILES		= ft_printf.c \
+						src/ft_writechar.c \
+						src/ft_writenb.c \
+						src/ft_writestr.c \
+						src/ft_writepointer.c \
+						src/ft_writenil.c \
+						src/ft_writenull.c \
+						src/ft_writehex.c
 
 O_MANDATORY_FILES			= $(C_MANDATORY_FILES:.c=.o)
 
@@ -18,14 +19,19 @@ D_FILES = $(O_FILES_ALL:.o=.d)
 
 all: $(NAME)
 
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_PATH) all
+
 $(NAME): $(O_MANDATORY_FILES) $(LIBFT)
 	cp $(LIBFT) $(NAME)
 	ar -rcs $@ $(O_MANDATORY_FILES)
 
 clean:
+	make -C $(LIBFT_PATH) clean
 	rm -rf $(O_FILES_ALL) $(D_FILES)
 
 fclean: clean
+	$(MAKE) -C $(LIBFT_PATH) fclean
 	rm -rf $(NAME)
 
 re: fclean all

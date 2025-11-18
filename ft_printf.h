@@ -6,7 +6,7 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:54:33 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/12 10:09:57 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/18 16:33:15 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include "../libft/libft.h"
 
-int		ft_printf(const char *str, ...);
+int		ft_printf(const char *str, ...) __attribute__((format(printf, 1, 2)));
 size_t	ft_writechar(char c);
 size_t	ft_writestr(char *str);
 size_t	ft_writepointer(void *ptr, int in_lowercase);
