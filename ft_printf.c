@@ -6,7 +6,7 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 09:26:16 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/20 15:45:47 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 16:06:32 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	format_str(const char *str, va_list parameters_infos)
 {
+	if (!str[1])
+		return (-1);
 	if (str[1] == 'c')
 		return (ft_writechar(va_arg(parameters_infos, int)));
 	else if (str[1] == 'i' || str[1] == 'd')
@@ -26,18 +28,11 @@ int	format_str(const char *str, va_list parameters_infos)
 		return (ft_writepointer(va_arg(parameters_infos, void *), 1));
 	else if (str[1] == 'x')
 		return (ft_writehex(va_arg(parameters_infos, unsigned int), 1));
-	else if (str[1] == 'X')
+	if (str[1] == 'X')
 		return (ft_writehex(va_arg(parameters_infos, unsigned int), 0));
-	else if (str[1] == '%')
+	if (str[1] == '%')
 		return (ft_writechar('%'));
-	else
-	{
-		if (!ft_writechar('%'))
-			return (-1);
-		if (!ft_writechar(str[1]))
-			return (-1);
-		return (2);
-	}
+	return (-1);
 }
 
 int	ft_printf(const char *str, ...)
