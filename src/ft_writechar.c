@@ -6,7 +6,7 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 14:46:26 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/12 09:20:31 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 12:54:08 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 size_t	ft_writechar(char c)
 {
-	ft_putchar_fd(c, 1);
-	return (1);
+	return (ft_putchar_fd(c, 1));
 }

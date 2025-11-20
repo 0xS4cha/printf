@@ -6,7 +6,7 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 10:54:33 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/18 16:57:10 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/19 09:09:07 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 
 int		ft_printf(const char *str, ...) __attribute__((format(printf, 1, 2)));
 size_t	ft_writechar(char c);

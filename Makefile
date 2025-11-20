@@ -1,7 +1,7 @@
 LIBFT_PATH				= libft
 LIBFT					= $(LIBFT_PATH)/libft.a
 NAME					= libftprintf.a
-CFLAGS					= -Wall -Werror -Wextra -I. -MMD -MP
+CFLAGS					= -Wall -Werror -Wextra -MMD -MP
 C_MANDATORY_FILES		= ft_printf.c \
 						src/ft_writechar.c \
 						src/ft_writenb.c \
@@ -12,17 +12,16 @@ C_MANDATORY_FILES		= ft_printf.c \
 						src/ft_writehex.c
 
 O_MANDATORY_FILES			= $(C_MANDATORY_FILES:.c=.o)
-
-O_BONUS_FILES			= $(C_BONUS_FILES:.c=.o)
-O_FILES_ALL		= $(O_MANDATORY_FILES) $(O_BONUS_FILES)
-D_FILES = $(O_FILES_ALL:.o=.d)
+O_BONUS_FILES				= $(C_BONUS_FILES:.c=.o)
+O_FILES_ALL					= $(O_MANDATORY_FILES) $(O_BONUS_FILES)
+D_FILES						= $(O_FILES_ALL:.o=.d)
 
 all: $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_PATH) all
 
-$(NAME): $(O_MANDATORY_FILES) $(LIBFT)
+$(NAME): $(LIBFT) $(O_MANDATORY_FILES) 
 	cp $(LIBFT) $(NAME)
 	ar -rcs $@ $(O_MANDATORY_FILES)
 

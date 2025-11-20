@@ -6,7 +6,7 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:06:33 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/12 09:21:07 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 13:03:42 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ static size_t	ft_displaypointer(unsigned long nb, int in_lowercase)
 		output = (output - 10) + ('A' + 32 * (in_lowercase != 0));
 	else
 		output = output + '0';
-	ft_putchar_fd(output, 1);
+	if (ft_putchar_fd(output, 1) < 0)
+		return (-1);
 	return (len + 1);
 }
 

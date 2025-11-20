@@ -6,7 +6,7 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:14:19 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/13 15:31:25 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 13:02:25 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 size_t	ft_writenil(void)
 {
-	ft_putstr_fd("(nil)", 1);
-	return (5);
+	return (ft_putstr_fd("(nil)", 1));
 }

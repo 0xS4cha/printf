@@ -6,7 +6,7 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 10:38:19 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/13 11:03:36 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 13:02:20 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*ft_strjoin(char const *s1, char const *s2);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_striteri(char *str, void (*f)(unsigned int, char*));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *str, int fd);
+size_t	ft_putchar_fd(char c, int fd);
+size_t	ft_putstr_fd(char *str, int fd);
 void	ft_putendl_fd(char *str, int fd);
 void	ft_putnbr_fd(int nb, int fd);
 void	ft_bzero(void *str, size_t n);

@@ -6,7 +6,7 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 09:26:16 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/13 14:38:26 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 12:52:21 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_printf(const char *str, ...)
 	va_start(parameters_infos, str);
 	i = 0;
 	written = 0;
-	while (str[i])
+	while (str && str[i])
 	{
 		if (str[i] == '%')
 		{

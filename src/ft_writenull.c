@@ -6,7 +6,7 @@
 /*   By: sservant <sservant@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:14:19 by sservant          #+#    #+#             */
-/*   Updated: 2025/11/17 09:09:56 by sservant         ###   ########lyon.fr   */
+/*   Updated: 2025/11/20 12:58:55 by sservant         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 size_t	ft_writenull(void)
 {
-	ft_putstr_fd("(null)", 1);
-	return (6);
+	return (ft_putstr_fd("(null)", 1));
 }
